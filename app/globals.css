@@ -1,26 +1,60 @@
-@import "tailwindcss";
+/* Fonte (pode deixar aqui mesmo) */
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@400;600;800&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+  --bg:#000000; --surface:#0a0a0a; --text:#f3f4f6; --muted:#a0a7b4;
+  --chip:#0f0f10; --link:#e5e7eb; --line:#1a1a1a; --ring:rgba(255,255,255,.15);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:"Afacad Flux",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans";
+  color:var(--text); background:var(--bg); letter-spacing:.2px; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+.container{width:min(1100px,92vw); margin:0 auto; padding:48px 0 80px; position:relative; z-index:1}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+header{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 18px; border-radius:16px;
+  background:var(--surface); box-shadow:0 0 0 1px var(--line), 0 8px 28px rgba(0,0,0,.5);
+  position:sticky; top:12px; z-index:10;
 }
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
+.avatar-ring{width:44px; height:44px; border-radius:999px; padding:2px; background:#000; box-shadow:0 0 0 1px var(--line) inset}
+.avatar-ring img{width:100%; height:100%; border-radius:999px; display:block; border:1px solid var(--line); background:#000}
+.brand b{font-weight:800; letter-spacing:.3px}
+nav a{text-decoration:none; color:var(--link); margin-left:16px; font-weight:600; opacity:.9}
+nav a:hover{opacity:1}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.hero{
+  display:grid; grid-template-columns:200px 1fr; gap:28px; align-items:center; padding:36px; margin-top:28px;
+  border-radius:20px; background:#000; box-shadow:0 0 0 1px var(--line), 0 24px 70px rgba(0,0,0,.6);
 }
+.hero .pfp-wrap{position:relative; width:200px; aspect-ratio:1/1; border-radius:24px; padding:10px; background:#000; box-shadow:0 0 0 1px var(--line) inset}
+.hero .pfp{position:relative; border-radius:18px; overflow:hidden; width:100%; height:100%; box-shadow:0 12px 36px rgba(0,0,0,.6); background:#000}
+.hero .pfp img{width:100%; height:100%; object-fit:cover; display:block; background:#000}
+
+.eyebrow{font-weight:800; letter-spacing:.3px; text-transform:uppercase; font-size:13px; color:var(--muted)}
+.hero h1{font-size:clamp(28px,4.2vw,48px); margin:6px 0 8px}
+.hero p{margin:0 0 18px; color:var(--muted); font-size:18px}
+
+.actions{display:flex; gap:12px; flex-wrap:wrap}
+.btn{appearance:none; border:1px solid var(--line); padding:11px 16px; border-radius:12px; font-weight:700; cursor:pointer; text-decoration:none; color:var(--text); background:#101010; box-shadow:0 6px 18px rgba(0,0,0,.5); transition:transform .12s ease, box-shadow .2s ease, background .2s ease}
+.btn:hover{transform:translateY(-1px); background:#141414}
+.btn:focus-visible{outline:2px solid var(--ring); outline-offset:2px}
+.btn-ghost{background:transparent; color:var(--link); border-style:dashed}
+
+.section{margin-top:42px; background:var(--surface); border-radius:18px; padding:28px; box-shadow:0 0 0 1px var(--line), 0 12px 38px rgba(0,0,0,.55); scroll-margin-top:96px}
+.section h2{margin:0 0 12px; font-size:22px}
+.section p{margin:0; color:var(--muted)}
+
+.list{margin:10px 0 0; padding:0; list-style:none; color:var(--muted)}
+.list li{padding:8px 0; border-bottom:1px dashed var(--line)}
+.list li:last-child{border-bottom:0}
+
+.two-col{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px}
+.card{background:#0b0b0b; border-radius:16px; padding:18px; box-shadow:0 0 0 1px var(--line), 0 10px 30px rgba(0,0,0,.55)}
+.card h3{margin:0 0 8px}
+.badges{display:flex; gap:10px; flex-wrap:wrap}
+.badge{padding:8px 12px; border-radius:999px; font-weight:700; color:var(--text); background:#101010; border:1px solid var(--line); box-shado
