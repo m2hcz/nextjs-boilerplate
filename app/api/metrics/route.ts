@@ -1,14 +1,27 @@
 import {NextResponse} from "next/server";
+import {games} from "../../data";
 export const revalidate=60;
-const ids=[10195887022,7677035096,10390310565,7661577083,10764948276,9889404689,8125244608,7761516673,9830176316,10421033356];
+type RobloxGame={id:number;playing:number;visits:number};
 export async function GET(){
+  const ids=games.map(game=>game.universeId);
   try{
     const url="https://games.roblox.com/v1/games?universeIds="+ids.join(",");
-    const response=await fetch(url,{next:{revalidate:60},signal:AbortSignal.timeout(8500)});
-    if(!response.ok)throw Error("roblox unavailable");
-    const body=await response.json() as {data?:Array<{id:number;playing:number;visits:number}>};
-    const valid=(body.data??[]).filter(g=>ids.includes(g.id)&&Number.isFinite(g.playing)&&Number.isFinite(g.visits));
-    if(valid.length===0)throw Error("empty metrics");
-    return NextResponse.json({players:valid.reduce((n,g)=>n+g.playing,0),visits:valid.reduce((n,g)=>n+g.visits,0),gameCount:ids.length,updatedAt:new Date().toISOString(),partial:valid.length!==ids.length},{headers:{"Cache-Control":"public,s-maxage=60,stale-while-revalidate=120"}});
-  }catch{return NextResponse.json({players:null,visits:null,gameCount:ids.length,updatedAt:null},{headers:{"Cache-Control":"public,s-maxage=20"}})}
+    const response=await fetch(url,{next:{revalidate:60},signal:AbortSignal.timeout(8500),headers:{"Accept":"application/json"}});
+    if(!response.ok)throw new Error("Roblox API status "+response.status);
+    const body=await response.json() as {data?:RobloxGame[]};
+    const seen=new Set<number>();
+    const valid=(body.data??[]).filter(game=>{
+      if(!ids.includes(game.id)||seen.has(game.id)||!Number.isFinite(game.playing)||!Number.isFinite(game.visits)||game.playing<0||game.visits<0)return false;
+      seen.add(game.id);return true;
+    });
+    if(valid.length===0)throw new Error("No valid Roblox game statistics");
+    return NextResponse.json({
+      players:valid.reduce((total,game)=>total+game.playing,0),
+      visits:valid.reduce((total,game)=>total+game.visits,0),
+      gameCount:ids.length,gamesWithData:valid.length,partial:valid.length!==ids.length,
+      updatedAt:new Date().toISOString()
+    },{headers:{"Cache-Control":"public,s-maxage=60,stale-while-revalidate=120"}});
+  }catch{
+    return NextResponse.json({players:null,visits:null,gameCount:ids.length,gamesWithData:0,partial:true,updatedAt:null},{headers:{"Cache-Control":"public,s-maxage=20"}});
+  }
 }

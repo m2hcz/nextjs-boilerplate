@@ -1,43 +1,35 @@
 import Link from "next/link";
 import LiveMetrics from "./live-metrics";
-
-export default function ScalePanel() {
-  return (
-    <section className="insights" id="performance" aria-labelledby="insights-title">
-      <div className="wrap insights-grid">
-        <div className="insights-tiles">
-          <article className="insight-tile insight-flagship">
-            <div className="insight-eyebrow">ATLANTIC / PERFORMANCE</div>
-            <strong className="insight-big">150K<span>+</span></strong>
-            <h3>Studio peak average</h3>
-            <p>Reported historical performance across the studio portfolio.</p>
-            <div className="insight-photo" aria-hidden="true" />
-          </article>
-          <article className="insight-tile insight-live">
-            <span className="insight-eyebrow"><i className="status-dot" /> LIVE ON ROBLOX</span>
-            <LiveMetrics />
-          </article>
-          <article className="insight-tile insight-zombie">
-            <span className="insight-eyebrow">ZOMBIE DEFENSE TOWER</span>
-            <strong className="insight-smaller">100K<span>+</span></strong>
-            <p>Peak concurrent players</p>
-          </article>
-          <article className="insight-tile insight-soccer">
-            <span className="insight-eyebrow">SUPER HEAD SOCCER</span>
-            <strong className="insight-smaller">8K<span>+</span></strong>
-            <p>Peak concurrent players</p>
-          </article>
-        </div>
-        <div className="insights-copy">
-          <span className="section-kicker">MORE THAN A STUDIO</span>
-          <h2 id="insights-title">BUILT FOR<br /><span>WHAT'S</span><br />NEXT.</h2>
-          <p>Atlantic develops, acquires and operates Roblox games. From production to LiveOps, we stay involved after launch.</p>
-          <div className="insights-actions">
-            <Link href="/#contact" className="pill pill-blue">LET'S WORK TOGETHER <span aria-hidden="true">↗</span></Link>
-            <Link href="/games" className="pill pill-outline">OUR GAMES <span aria-hidden="true">↗</span></Link>
-          </div>
-        </div>
+import {games} from "./data";
+export default function ScalePanel(){
+ return <section className="insights" id="performance" aria-labelledby="insights-title">
+   <div className="wrap insights-grid">
+    <div className="insights-tiles atl-portfolio-stats">
+     <article className="insight-tile insight-flagship atl-players-tile">
+      <span className="insight-eyebrow"><i className="status-dot"/> ATLANTIC / LIVE PLAYERS</span>
+      <LiveMetrics metric="players"/>
+      <div className="insight-photo" aria-hidden="true"/>
+     </article>
+     <article className="insight-tile insight-live atl-visits-tile">
+       <span className="insight-eyebrow">ATLANTIC / PORTFOLIO VISITS</span>
+       <LiveMetrics metric="visits"/>
+     </article>
+     <article className="insight-tile atl-experiences-tile">
+       <span className="insight-eyebrow">OUR PORTFOLIO</span>
+       <strong className="insight-smaller">{games.length.toString().padStart(2,"0")}</strong>
+       <p>Roblox experiences tracked</p>
+       <Link href="/games" className="atl-stats-link">EXPLORE ALL GAMES ↗</Link>
+     </article>
+    </div>
+    <div className="insights-copy">
+      <span className="section-kicker">MORE THAN A STUDIO</span>
+      <h2 id="insights-title">BUILT FOR<br/><span>WHAT'S</span><br/>NEXT.</h2>
+      <p>Atlantic develops, acquires and operates Roblox games. From production to LiveOps, we stay involved after launch.</p>
+      <div className="insights-actions">
+       <Link href="/#contact" className="pill pill-blue">LET'S WORK TOGETHER <span aria-hidden="true">↗</span></Link>
+       <Link href="/games" className="pill pill-outline">OUR GAMES <span aria-hidden="true">↗</span></Link>
       </div>
-    </section>
-  );
+    </div>
+   </div>
+  </section>
 }
