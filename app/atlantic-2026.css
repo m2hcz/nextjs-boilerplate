@@ -147,3 +147,22 @@ html{background:#060608}body{font-family:var(--atl-body);background:#060608;colo
 @media(max-width:1060px){.insights-grid{grid-template-columns:1fr}.insights-copy{grid-row:1}.insights-tiles{width:100%;max-width:850px}}
 @media(max-width:700px){.studio-focus-inner{align-items:flex-start;flex-direction:column;gap:12px}.studio-focus-areas{gap:9px 24px;font-size:13px}.atl-hero-bottom{font-size:12px}.insights{padding:65px 0 85px}.insights-tiles .insight-tile{padding:21px 0!important}.insights-copy>p,.sectiontitle>p,.subcopy{font-size:15px}.sectiontitle{gap:22px}}
 @media(prefers-reduced-motion:reduce){.insights-tiles .insight-tile{transition:none!important}}
+
+/* Atlantic LiveOps: editorial rhythm instead of generic feature cards */
+.atl-liveops-method{background:#08090c;color:#f4f5f7;border-top:1px solid #ffffff22;border-bottom:1px solid #ffffff20;padding-block:clamp(90px,10vw,156px)}
+.atl-liveops-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,125px);align-items:start}
+.atl-liveops-intro{position:sticky;top:42px}
+.atl-liveops-intro .eyebrow{font-size:13px;color:#bbc4d2}
+.atl-liveops-intro h2{font-family:var(--atl-title);font-size:clamp(48px,5.8vw,89px);line-height:.98;letter-spacing:-.065em;margin:24px 0 32px}
+.atl-liveops-intro h2 em{font-style:normal;color:#a1abbc}
+.atl-liveops-intro>p:not(.eyebrow){font-size:16px;line-height:1.8;color:#c0c5ce;max-width:500px}
+.atl-liveops-cta{display:inline-flex;align-items:center;gap:27px;border-bottom:1px solid #b5bdc9;padding-block:12px;margin-top:30px;font-size:14px;font-weight:800;color:#f6f7f8}
+.atl-liveops-cta:hover{border-color:#0077ff;color:#8dc0ff}
+.atl-liveops-process{border-top:1px solid #ffffff5b}
+.atl-liveops-step{display:grid;grid-template-columns:36px 1fr 24px;gap:16px;padding:31px 0 33px;border-bottom:1px solid #ffffff30}
+.atl-liveops-number{font-family:var(--atl-body);font-size:12px;font-weight:750;color:#a8b1c0}
+.atl-liveops-step h3{font-family:var(--atl-body);font-size:clamp(23px,2.7vw,39px);font-weight:800;letter-spacing:-.035em;line-height:1.2}
+.atl-liveops-step p{margin-top:11px;font-family:var(--atl-body);font-size:15px;line-height:1.65;color:#b4bdc9;max-width:410px}
+.atl-liveops-icon{font-size:22px;color:#c1c6cf}
+@media(max-width:870px){.atl-liveops-layout{grid-template-columns:1fr;gap:45px}.atl-liveops-intro{position:static}}
+@media(max-width:560px){.atl-liveops-intro h2{font-size:clamp(43px,12vw,65px)}.atl-liveops-step{padding-block:23px;grid-template-columns:29px 1fr 16px;gap:11px}.atl-liveops-step p{font-size:14px}}
