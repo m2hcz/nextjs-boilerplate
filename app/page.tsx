@@ -1,1 +1,84 @@
-import Link from 'next/link';import {Nav,GameCards,Partners,Footer} from './ui';import Contact from './contact';import ScalePanel from './scale-panel';import Motion from './motion';export default function Home(){return <><Motion/><Nav/><main><section className="hero" id="home"><div className="wrap herobody"><p className="eyebrow">INDEPENDENT ROBLOX GAME STUDIO</p><h1>MAKE IT<br/>WORTH<br/><em>PLAYING.</em></h1><div className="heroend"><p>We develop, operate and grow Roblox games. Good ideas deserve great execution — and a life beyond launch.</p><div><Link className="btn light" href="/games">EXPLORE OUR GAMES <b>↗</b></Link><Link className="textbtn" href="/#partnerships">WORK WITH ATLANTIC ↗</Link></div></div><div className="herofoot">ATL / 001 <span>ROBLOX · WORLDWIDE</span></div></div></section><Partners/><ScalePanel/><section className="section paper" id="games"><div className="wrap"><div className="sectiontitle"><div><p className="eyebrow">01 / SELECTED WORK</p><h2>THE GAMES<br/>SPEAK FIRST.</h2></div><p>Different worlds. Different audiences. One focus: games people want to play again.</p></div><GameCards/><div className="center"><Link className="btn dark" href="/games">VIEW ALL GAMES <b>↗</b></Link></div></div></section><div className="ticker">CREATE · OPERATE · GROW · REPEAT</div><section className="section white" id="services"><div className="wrap split"><div><p className="eyebrow">02 / WHAT WE DO</p><h2>MORE THAN<br/>A LAUNCH.</h2><p className="subcopy">Making a game is one thing. Building a game that keeps moving takes a team with range.</p></div><div className="services">{[['01','Game development','Production, engineering, game design and systems.'],['02','Live operations','Updates, events, retention and player experience.'],['03','Growth & marketing','Positioning, creators, campaigns and launches.'],['04','Data & performance','Meaningful metrics translated into product decisions.']].map(([n,t,d])=><article className="service" key={n}><span>{n}</span><div><h3>{t}</h3><p>{d}</p></div><b>↗</b></article>)}</div></div></section><section className="section charcoal" id="about"><div className="wrap about"><div><p className="eyebrow">03 / THE STUDIO</p><h2>WE BUILD.<br/>WE STAY.</h2></div><p>Atlantic is an independent Roblox studio focused on development and long-term game operations. From the first prototype to the next update, we work alongside teams to make games people return to.</p></div></section><section className="section grey" id="partnerships"><div className="wrap"><p className="eyebrow">04 / PARTNERSHIPS</p><h2>LET'S MAKE<br/>A MOVE.</h2><div className="partrows">{[['01','Build with us','Co-development and production support.'],['02','Grow your game','LiveOps, marketing, performance and operations.'],['03','Discuss a partnership','Investment, revenue share and game acquisitions.']].map(([n,t,d])=><a key={n} href="/#contact" className="partrow"><span>{n}</span><h3>{t}</h3><p>{d}</p><b>↗</b></a>)}</div></div></section><section className="section charcoal careers" id="careers"><div className="wrap"><p className="eyebrow">05 / CAREERS</p><h2>YOUR WORK.<br/>REAL PLAYERS.</h2><p>Designers, engineers, artists and producers. We'd like to see what you make.</p><Link href="/#contact" className="btn light">INTRODUCE YOURSELF ↗</Link></div></section><section className="section white" id="contact"><div className="wrap split"><div><p className="eyebrow">06 / CONTACT</p><h2>WHAT'S<br/>NEXT?</h2><p className="subcopy">Share your game, your idea or your portfolio.</p></div><Contact/></div></section></main><Footer/></>}
+import Link from "next/link";
+import { Nav, GameCards, Partners, Footer } from "./ui";
+import Contact from "./contact";
+import ScalePanel from "./scale-panel";
+import Motion from "./motion";
+import { games } from "./data";
+
+const heroImages = [games[2], games[4], games[0], games[1], games[3], games[5]];
+
+export default function Home() {
+  return (
+    <>
+      <Motion />
+      <Nav />
+      <main>
+        <section className="hero atl-hero" id="home">
+          <div className="atl-hero-collage" aria-hidden="true">
+            {heroImages.map((game) => <div className="atl-hero-image" key={game.title}><img src={game.img} alt="" /></div>)}
+          </div>
+          <div className="atl-hero-fade" aria-hidden="true" />
+          <div className="wrap herobody atl-hero-content">
+            <p className="eyebrow atl-hero-label">ATLANTIC INTERACTIVE <span>·</span> ROBLOX GAME STUDIO</p>
+            <h1>GAMES<br />WORTH<br /><em>PLAYING.</em></h1>
+            <p className="atl-hero-lead">We build, operate and grow Roblox experiences. Real games. Real players. Long-term thinking.</p>
+            <div className="atl-hero-actions">
+              <Link className="pill pill-blue" href="/games">EXPLORE GAMES <span aria-hidden="true">↗</span></Link>
+              <Link className="pill pill-outline" href="/#contact">WORK WITH US <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className="atl-hero-bottom"><span>DEVELOPMENT / LIVEOPS / GROWTH</span><span>SCROLL TO EXPLORE ↓</span></div>
+          </div>
+        </section>
+        <div className="atl-services-ticker" aria-label="Studio capabilities"><div>GAME DEVELOPMENT <span>✦</span> LIVE OPERATIONS <span>✦</span> ANALYTICS <span>✦</span> GROWTH <span>✦</span> GAME ACQUISITIONS <span>✦</span> GAME DEVELOPMENT <span>✦</span> LIVE OPERATIONS <span>✦</span> ANALYTICS</div></div>
+        <Partners />
+        <ScalePanel />
+        <section className="section paper" id="games">
+          <div className="wrap">
+            <div className="sectiontitle">
+              <div><p className="eyebrow">OUR WORK / SELECTED EXPERIENCES</p><h2>PLAY<br /><span className="accent-word">SOMETHING.</span></h2></div>
+              <p>A growing portfolio of experiences developed and operated for millions of Roblox players.</p>
+            </div>
+            <GameCards />
+            <div className="center"><Link className="pill pill-blue" href="/games">EXPLORE THE PORTFOLIO <span aria-hidden="true">↗</span></Link></div>
+          </div>
+        </section>
+        <section className="section white" id="services">
+          <div className="wrap split">
+            <div><p className="eyebrow">CAPABILITIES</p><h2>MADE TO<br />LAST.</h2><p className="subcopy">The right game is just the beginning. We build the systems and operations behind it.</p></div>
+            <div className="services">
+              {[
+                ["01","Development","Game engineering, systems and production."],
+                ["02","LiveOps","Content, events and retention strategy."],
+                ["03","Growth","Creative, marketing and audience development."],
+                ["04","Analytics","Player insights and product decisions."],
+              ].map(([n,title,description]) => <article className="service" key={n}><span>{n}</span><div><h3>{title}</h3><p>{description}</p></div><b>↗</b></article>)}
+            </div>
+          </div>
+        </section>
+        <section className="section charcoal" id="about">
+          <div className="wrap about"><div><p className="eyebrow">ATLANTIC INTERACTIVE</p><h2>WE BUILD.<br />WE STAY.</h2></div><p>Atlantic is an independent Roblox studio. We work with game teams to create quality experiences and support them through every stage of growth.</p></div>
+        </section>
+        <section className="section grey" id="partnerships">
+          <div className="wrap">
+            <p className="eyebrow">PARTNER WITH ATLANTIC</p>
+            <h2>LET'S BUILD<br />TOGETHER.</h2>
+            <div className="partrows">
+              {[
+                ["01","Co-development","Production and engineering for ambitious experiences."],
+                ["02","LiveOps & growth","Retention, monetization and player experience."],
+                ["03","Partnerships & acquisitions","Explore a collaboration, investment or acquisition."],
+              ].map(([n,title,description]) => <a className="partrow" href="/#contact" key={n}><span>{n}</span><h3>{title}</h3><p>{description}</p><b>↗</b></a>)}
+            </div>
+          </div>
+        </section>
+        <section className="section charcoal careers" id="careers">
+          <div className="wrap"><p className="eyebrow">CAREERS</p><h2>WORK THAT<br />GETS PLAYED.</h2><p>We want to meet people who care about great games. Designers, engineers, artists, producers and operators.</p><Link href="/#contact" className="pill pill-blue">GET IN TOUCH ↗</Link></div>
+        </section>
+        <section className="section white" id="contact">
+          <div className="wrap split"><div><p className="eyebrow">CONTACT</p><h2>WHAT'S<br />NEXT?</h2><p className="subcopy">Tell us about your game, idea, studio or portfolio.</p></div><Contact /></div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
