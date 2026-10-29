@@ -1,0 +1,171 @@
+
+/*
+ * Atlantic Interactive — graphite dark theme.
+ * All page surfaces are dark; the hero headline is the sole highlighted gradient.
+ * Shadow, border and chart colors remain understated for an editorial hierarchy.
+ */
+:root{
+  --atl-accent:#b8bec7;
+  --atl-black:#07080a;
+  --surface:#090a0d;
+  --surface-raised:#111318;
+  --text:#f0f2f5;
+  --text-muted:#949aa5;
+  color-scheme:dark;
+}
+html,body{background:#07080a;color:var(--text)}
+body{background:linear-gradient(160deg,#090a0c 0%,#101216 42%,#07080b 100%)}
+::selection{background:#89919c;color:#07080a}
+.nav{background:rgba(8,9,12,.80);border-bottom:1px solid #ffffff17;backdrop-filter:blur(20px)}
+.nav nav a{color:#d1d4d9}
+.brand{color:#f0f2f5}
+.navcta{background:linear-gradient(125deg,#202329,#14161a);color:#f3f4f5;border:1px solid #6f788849;border-radius:6px}
+.navcta:hover{background:#2d3035}
+.hero{
+  background:
+    radial-gradient(ellipse 44% 43% at 69% 47%,rgba(168,178,192,.15),transparent 77%),
+    linear-gradient(90deg,rgba(6,7,9,.96) 0%,rgba(8,9,12,.79) 48%,rgba(11,12,17,.45) 100%),
+    linear-gradient(0deg,#050608df,transparent 65%),
+    url('https://atlinteractive.com/background.png') center/cover,#0d0f14;
+}
+.hero:after{background:radial-gradient(ellipse 40% 50% at 76% 68%,rgba(211,222,239,.06),transparent 78%)}
+.hero h1{color:#f4f5f6;text-shadow:0 8px 44px #0007}
+.hero h1 em{
+  font-style:normal;
+  color:#f5f6f8;
+  background:linear-gradient(109deg,#fff 12%,#c3c8cf 50%,#8a929f 82%,#f0f2f5 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  -webkit-text-stroke:0;
+  filter:drop-shadow(0 4px 27px rgba(205,211,219,.20));
+}
+.heroend>p{color:#c5c8cf}
+.herofoot{color:#959aa5;border-color:#ffffff2e}
+.textbtn{color:#d9dce1;border-color:#c2c6cd5e}
+.btn.light,.btn.dark{
+  background:linear-gradient(115deg,#25282e,#15171b);
+  color:#e9ebef;
+  border:1px solid #7a84934d;
+  border-radius:6px;
+}
+.btn.light:hover,.btn.dark:hover{background:#343740}
+.partners{background:#07080b;border-block:1px solid #ffffff18}
+.partnerslabel,.logo{border-color:#ffffff1a}
+.partnerslabel{color:#979ca7}
+.logo img{opacity:.72}
+
+/* No white backgrounds anywhere in the page sections. */
+.paper{
+  background:
+    radial-gradient(ellipse 74% 60% at 100% 4%,rgba(197,205,218,.15),transparent 72%),
+    radial-gradient(ellipse 52% 52% at 0 92%,rgba(131,143,163,.09),transparent 80%),
+    linear-gradient(152deg,#0b0d11 0%,#16191e 50%,#0a0c10 100%);
+  color:#eceef2;
+}
+.white{
+  background:
+    radial-gradient(ellipse 58% 66% at 0 76%,rgba(191,199,211,.14),transparent 71%),
+    linear-gradient(132deg,#0a0b0e 0%,#17191e 55%,#0c0e12 100%);
+  color:#eef0f4;
+}
+.grey{
+  background:
+    radial-gradient(ellipse 59% 70% at 91% 20%,rgba(208,218,230,.15),transparent 70%),
+    linear-gradient(130deg,#111318,#1e2026 53%,#0e1014);
+  color:#f0f1f4;
+}
+.charcoal{
+  background:radial-gradient(ellipse 50% 50% at 82% 38%,rgba(184,194,207,.08),transparent 80%),linear-gradient(135deg,#0a0b0e,#15171b 52%,#07090b);
+  color:#f2f3f6;
+}
+.ticker{background:#0c0e12;color:#c4c8cf;border-block:1px solid #ffffff13}
+.section .eyebrow{color:#9ca3af}
+.section h2,.sectiontitle h2,.scale-copy h2{color:#f1f2f4}
+.sectiontitle>p,.subcopy,.about>p,.careers p:not(.eyebrow){color:#9ea4ae}
+.gamecopy h3,.partrow h3,.service h3{color:#e9ebef}
+.gamecopy span,.partrow p,.service p,.partrow>span,.service>span{color:#a1a7b1}
+.gameart{background:#1c1f25;border:1px solid #ffffff16}
+.paper .gameart{border-radius:9px}
+.paper .gamecard:hover .gameart{box-shadow:0 12px 42px #0008;border-color:#ffffff39}
+.gameno,.jump{background:rgba(17,19,24,.85);color:#f3f4f7;border:1px solid #ffffff55;backdrop-filter:blur(6px)}
+.peak{color:#aeb5bf}
+.collectionhead{color:#d1d5dd;border-bottom-color:#ffffff4a}
+.collectionhead span{color:#9298a2}
+.white .service:first-child,.service{border-color:#ffffff36}
+.service:first-child{border-color:#ffffff4a}
+.service b{color:#8f96a3}
+.partrows{border-color:#ffffff43}
+.partrow{border-color:#ffffff2b}
+.grey .partrow:hover{background:linear-gradient(90deg,#ffffff0b,transparent)}
+.partrow b{color:#c5cad2}
+.form label{color:#e2e5e9}
+.form input,.form select,.form textarea{color:#f0f2f5;background:transparent;border-color:#ffffff52}
+.form input::placeholder,.form textarea::placeholder{color:#9198a4}
+.form select option{background:#111318;color:#f1f2f5}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:#d0d6df}
+.form button{background:linear-gradient(120deg,#292c33,#17191e);color:#f3f4f7;border:1px solid #ffffff4a}
+.form button:hover{background:#333740}
+.status{color:#bbc0c8}
+.footer{background:#07080b;border-top:1px solid #ffffff25}
+.footmain p{color:#e1e4e9}
+.footmain a{color:#afb5c0}
+.copyright{color:#848b95;border-top-color:#ffffff29}
+
+/* Calm, pale monochrome dashboard. Metrics are readable without accent glow. */
+.scale-panel{
+  background:radial-gradient(ellipse 55% 48% at 75% 45%,rgba(185,192,203,.105),transparent 80%),
+  linear-gradient(142deg,#08090c 0%,#16181c 58%,#090a0e 100%);
+}
+.scale-panel:before{background:radial-gradient(ellipse 48% 43% at 35% 70%,rgba(220,227,238,.07),transparent 85%)}
+.scale-card,.scale-card-growth,.scale-card-milestone,.scale-card-current,.scale-card-small{
+  background:linear-gradient(145deg,#1d2026,#121418 54%,#0c0e12);
+  border-color:#ffffff1f;
+  box-shadow:0 20px 45px #0002;
+}
+.scale-card:hover{border-color:#aeb6c35b;box-shadow:0 16px 42px #0006}
+.scale-cross,.scale-up,.scale-eyebrow,.scale-copy h2 span{color:#abb2bd}
+.scale-eyebrow span{background:#aeb5bf}
+.scale-card .scale-tag{color:#a8afb9}
+.scale-main-number,.scale-detail-number{color:#eaecf0}
+.scale-main-number span,.scale-detail-number span{color:#bfc4cd}
+.scale-card h3{color:#eef0f4}
+.scale-card p,.scale-lead{color:#a9afb8}
+.scale-mini-bars span{background:linear-gradient(#d6dce4,#515761)}
+.scale-live-bottom{color:#aab2be;border-color:#ffffff2b}
+.live-dot,.live-indicator{background:#ccd2dd;box-shadow:0 0 0 4px #ffffff17}
+.scale-features span{color:#bbc1cb;border-color:#ffffff35}
+.scale-primary,.scale-secondary{
+  background:linear-gradient(120deg,#2a2d33,#181b20);
+  color:#f0f2f5;
+  border:1px solid #ffffff54;
+  box-shadow:none;
+}
+.scale-actions .btn:hover{box-shadow:0 10px 30px #0007}
+.growth-chart .graph-line{stroke:#ced4dd}
+.growth-chart .graph-pulse{fill:#d3d8e1}
+.growth-chart .graph-halo{fill:#d3d8e1}
+#atl-growth stop:first-child{stop-color:#ccd4df;stop-opacity:.15}
+#atl-growth stop:last-child{stop-color:#a8b3bf;stop-opacity:0}
+.graph-disclaimer{color:#828a95}
+.page-progress{background:linear-gradient(90deg,#4b525d,#c8ced8)}
+/* Only the main hero headline receives a gradient typographic highlight. */
+.gameshero{
+  background:radial-gradient(ellipse 66% 85% at 80% 20%,rgba(197,207,221,.16),transparent 70%),linear-gradient(145deg,#0a0c0f,#1b1d23 57%,#080a0d);
+  color:#f4f5f6;
+}
+.gameshero h1{color:#f5f6f8}
+.gameshero h1 em{color:#c7ccd5;-webkit-text-stroke:0}
+.gameshero p:last-child{color:#a5abb5}
+@media (max-width:900px){
+ .paper{background:radial-gradient(ellipse 98% 65% at 85% 6%,rgba(191,199,212,.11),transparent 78%),linear-gradient(150deg,#0c0e12,#181a1f 51%,#090b0f)}
+ .white{background:radial-gradient(ellipse 90% 60% at 0 60%,rgba(209,217,228,.09),transparent 78%),linear-gradient(#0b0d10,#17191e)}
+ .grey{background:radial-gradient(ellipse 80% 55% at 95% 0,rgba(196,205,217,.11),transparent 78%),linear-gradient(135deg,#121419,#1b1e23)}
+}
+@media (max-width:560px){
+ .paper{background:radial-gradient(ellipse 110% 60% at 80% 5%,rgba(192,200,213,.10),transparent 80%),linear-gradient(#0e1014,#17191e)}
+ .white{background:linear-gradient(160deg,#101216,#191b20 52%,#0a0c10)}
+ .grey{background:linear-gradient(135deg,#15171b,#1f2227,#101216)}
+ .scale-panel{background:linear-gradient(145deg,#0a0b0d,#181a1f 50%,#090a0e)}
+ .hero{background:radial-gradient(ellipse 80% 50% at 100% 40%,rgba(180,188,202,.11),transparent 75%),linear-gradient(100deg,#08090dd9,#11131899),url('https://atlinteractive.com/background.png') center/cover,#101216}
+}
+@media (prefers-reduced-motion:reduce){.scale-card{transform:none!important}}
