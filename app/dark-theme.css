@@ -26,7 +26,7 @@ body{background:linear-gradient(160deg,#090a0c 0%,#101216 42%,#07080b 100%)}
     radial-gradient(ellipse 44% 43% at 69% 47%,rgba(168,178,192,.15),transparent 77%),
     linear-gradient(90deg,rgba(6,7,9,.96) 0%,rgba(8,9,12,.79) 48%,rgba(11,12,17,.45) 100%),
     linear-gradient(0deg,#050608df,transparent 65%),
-    url('https://atlinteractive.com/background.png') center/cover,#0d0f14;
+    linear-gradient(120deg,#08131d 0%,#12283e 52%,#071019 100%) center/cover,#0d0f14;
 }
 .hero:after{background:radial-gradient(ellipse 40% 50% at 76% 68%,rgba(211,222,239,.06),transparent 78%)}
 .hero h1{color:#f4f5f6;text-shadow:0 8px 44px #0007}
@@ -166,6 +166,6 @@ body{background:linear-gradient(160deg,#090a0c 0%,#101216 42%,#07080b 100%)}
  .white{background:linear-gradient(160deg,#101216,#191b20 52%,#0a0c10)}
  .grey{background:linear-gradient(135deg,#15171b,#1f2227,#101216)}
  .scale-panel{background:linear-gradient(145deg,#0a0b0d,#181a1f 50%,#090a0e)}
- .hero{background:radial-gradient(ellipse 80% 50% at 100% 40%,rgba(180,188,202,.11),transparent 75%),linear-gradient(100deg,#08090dd9,#11131899),url('https://atlinteractive.com/background.png') center/cover,#101216}
+ .hero{background:radial-gradient(ellipse 80% 50% at 100% 40%,rgba(180,188,202,.11),transparent 75%),linear-gradient(100deg,#08090dd9,#11131899),linear-gradient(120deg,#08131d 0%,#12283e 52%,#071019 100%) center/cover,#101216}
 }
 @media (prefers-reduced-motion:reduce){.scale-card{transform:none!important}}
