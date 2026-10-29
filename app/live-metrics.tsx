@@ -29,6 +29,6 @@ export default function LiveMetrics({metric}:{metric:"players"|"visits"}){
     <div className="scale-detail-number scale-live-number" aria-live="polite" aria-label={value===null?"Metrics unavailable":value.toLocaleString("en-US")}>{format(value)}</div>
     <h3>{isPlayers?"Players online right now":"Total visits across our portfolio"}</h3>
     <p>{value===null?"Roblox metrics are temporarily unavailable.":stats?.partial?"Live totals for the games currently reporting data.":isPlayers?"Live concurrent players across all portfolio games.":"Combined lifetime visits of all portfolio games."}</p>
-    <div className="scale-live-bottom"><span>{coverage}</span><span>{stats?.updatedAt?"UPDATES EVERY MINUTE":"AWAITING DATA"}</span></div>
+    
   </div>;
 }
