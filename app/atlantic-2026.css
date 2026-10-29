@@ -84,7 +84,7 @@ html{background:#060608}body{font-family:var(--atl-body);background:#060608;colo
 .form button{background:#0077ff;border:1px solid #0077ff;color:#fff;border-radius:30px;padding:16px 22px;font-family:var(--atl-body);font-weight:800}
 .form button:hover{background:#1885ff}
 .footer{background:#040405;border-top:1px solid #ffffff18}.footmain p{font-family:var(--atl-title);font-size:25px}
-.gameshero.atl-gameshero{background:linear-gradient(90deg,#050506de,#0505069e),linear-gradient(120deg,#08131d 0%,#12283e 52%,#071019 100%) center/cover;min-height:460px;display:flex;align-items:center;padding-top:170px;padding-bottom:90px}
+.gameshero.atl-gameshero{background:linear-gradient(90deg,#050506de,#0505069e),url('/showcase2.png') center/cover;min-height:460px;display:flex;align-items:center;padding-top:170px;padding-bottom:90px}
 .atl-gameshero h1{font-family:var(--atl-title);font-size:clamp(64px,8vw,120px);letter-spacing:-.05em;line-height:1.02}
 .atl-gameshero h1 em{font-style:normal;color:#fff;-webkit-text-stroke:0}
 .atl-gameshero .eyebrow{color:#0077ff}.atl-gameshero p:last-child{max-width:590px;color:#a9a9af}
