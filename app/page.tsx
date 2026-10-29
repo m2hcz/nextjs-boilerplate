@@ -31,6 +31,30 @@ export default function Home() {
         </section>
         <Partners />
         <ScalePanel />
+        <section className="atl-liveops-method" id="liveops" aria-labelledby="liveops-title">
+          <div className="wrap atl-liveops-layout">
+            <div className="atl-liveops-intro">
+              <p className="eyebrow">The Atlantic approach / LiveOps</p>
+              <h2 id="liveops-title">LAUNCH IS<br/>JUST THE<br/><em>BEGINNING.</em></h2>
+              <p>Great Roblox games need more than a launch. Atlantic works alongside creators to plan updates, improve retention, and keep their communities engaged over time.</p>
+              <Link href="/#contact" className="atl-liveops-cta">Discuss a LiveOps partnership <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className="atl-liveops-process" aria-label="How Atlantic operates live games">
+              {[
+                ["01", "Understand", "Review player behavior, game systems, and the opportunities that matter most."],
+                ["02", "Operate", "Ship meaningful content, events, and improvements on a consistent cadence."],
+                ["03", "Grow", "Test acquisition, monetization, and community initiatives with clear priorities."],
+                ["04", "Improve", "Use live performance and player feedback to guide the next iteration."],
+              ].map(([number, title, description]) => (
+                <div className="atl-liveops-step" key={number}>
+                  <span className="atl-liveops-number">{number}</span>
+                  <div><h3>{title}</h3><p>{description}</p></div>
+                  <span className="atl-liveops-icon" aria-hidden="true">↗</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         <section className="section paper" id="games">
           <div className="wrap">
             <div className="sectiontitle">
